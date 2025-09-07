@@ -57,7 +57,7 @@
                     var analyser=new AnalyserNode(audioctx);
                     analyser.fftSize=128;
                     mediaSource.connect(analyser);
-                    mediaSource.connect(audioctx.destination);
+                    analyser.connect(audioctx.destination);
                     var dataArray=new Uint8Array();
                     function renderFrame(){
                         analyser.getByteFrequencyData(dataArray);
