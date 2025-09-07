@@ -28,11 +28,11 @@ div.media_icon{
     background-size: cover;
     position: absolute;
     top: calc(100% - 34px);
-};
+}
 #slider_time {
     position: absolute;
     width: calc(100% - 50px);
     height: 8px;
     left: 40px;
     top: calc(100% - 25px);
-};
+}
