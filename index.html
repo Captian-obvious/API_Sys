@@ -17,6 +17,21 @@
                 var durationSlider=document.getElementById("slider_time");
                 var theaudio=document.getElementById("playable");
                 var isPlay=false;
+                theaudio.addEventListener("timeupdate", function() {
+                    durationSlider.value = audio.currentTime;
+                    durationSlider.max = audio.duration;
+                });
+                durationSlider.addEventListener("change", function() {
+                    audio.currentTime = durationSlider.value;
+                });
+                theaudio.addEventListener("pause",function(ev){
+                    isPlay=false;
+                    media_icon.className="media_icon icon_play";
+                });
+                theaudio.addEventListener("play",function(ev){
+                    isPlay=true;
+                    media_icon.className="media_icon icon_pause";
+                });
                 media_icon.addEventListener("click",function(ev){
                     if (isPlay) {
                         isPlay=false;
