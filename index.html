@@ -8,6 +8,7 @@
     <body>
         <h1 class="asset_title">{{ ASSET_NAME_ID }}</h1>
         <h1 class="asset_moderated_message" hidden>Asset is private, archived, or has been moderated</h1>
+        <canvas id="visualizer"></canvas>
         <div id="mediaPlayerControls">
             <audio id="playable" src="{{ CACHE_SOURCE }}" hidden></audio>
             <div id="picture"></div>
@@ -19,6 +20,7 @@
                 var media_icon=document.getElementById("icon_playpause");
                 var durationSlider=document.getElementById("slider_time");
                 var theaudio=document.getElementById("playable");
+                var canvas=document.getElementById("visualizer");
                 var isPlay=false;
                 theaudio.addEventListener("timeupdate", function() {
                     durationSlider.value=theaudio.currentTime;
@@ -46,7 +48,13 @@
                         theaudio.play();
                     };
                 });
-                function analyser(){
+                function analyser_handler(){
+                    var audioctx=new AudioContext();
+                    var mediaSource=audioctx.createMediaElementSource(theaudio);
+                    var analyser=new AnalyserNode(audioctx);
+                    analyser.fftSize=128;
+                    mediaSource.connect(analyser);
+                    mediaSource.connect(audioctx.destination);
                 };
             });
         </script>
