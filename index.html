@@ -45,6 +45,8 @@
                     var drawctx=canvas.getContext("2d");
                     function renderFrame(){
                         analyser.getByteFrequencyData(dataArray);
+                        canvas.width=document.innerWidth;
+                        canvas.height=document.innerHeight;
                         var canvasWidth=canvas.width;
                         var canvasHeight=canvas.height;
                         var barWidth=canvasWidth/freqBinCount;
