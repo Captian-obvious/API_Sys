@@ -30,6 +30,6 @@ div.media_icon{
 }
 #slider_time {
     position: absolute;
-    width: calc(100% - 35px);
     x: 35px;
+    width: 90%;
 }
