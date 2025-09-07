@@ -71,8 +71,7 @@
                         mediaSource=audioctx.createMediaElementSource(theaudio);
                         analyser=new AnalyserNode(audioctx);
                         analyser.fftSize=128;
-                        analyser.maxDecibels = -3;
-                        analyser.minDecibels = -150;
+                        analyser.maxDecibels = -4;
                         mediaSource.connect(analyser);
                         analyser.connect(audioctx.destination);
                         freqBinCount=analyser.frequencyBinCount;
