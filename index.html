@@ -52,13 +52,24 @@
                     canvas.width=document.innerWidth;
                     canvas.height=document.innerHeight;
                     var drawctx=canvas.getContext("2d");
-                    drawctx.fillStyle="black";
                     var audioctx=new AudioContext();
                     var mediaSource=audioctx.createMediaElementSource(theaudio);
                     var analyser=new AnalyserNode(audioctx);
                     analyser.fftSize=128;
                     mediaSource.connect(analyser);
                     mediaSource.connect(audioctx.destination);
+                    var dataArray=new Uint8Array();
+                    function renderFrame(){
+                        analyser.getByteFrequencyData(dataArray);
+                        var canvasWidth=canvas.width;
+                        var freqBinCount=analyser.frequencyBinCount;
+                        var barWidth=canvas.width/freqBinCount;
+                        for (var i=0;i<freqBinCount;i++) {
+                            var barHeight=dataArray[i]/255 * 60;
+                            
+                        };
+                    };
+                    window.requestAnimationFrame(renderFrame);
                 };
             });
             analyser_handler();
