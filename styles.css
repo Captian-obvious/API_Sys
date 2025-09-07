@@ -32,12 +32,3 @@ div.media_icon {
     left: 40px;
     top: calc(100% - 25px);
 }
-@media only screen and (max-width: 600px) {
-    #slider_time {
-        position: absolute;
-        width: calc(100% - 50px);
-        height: 8px;
-        left: 40px;
-        top: calc(100% - 25px);
-    }
-}
