@@ -40,13 +40,14 @@
                 });
                 var audioctx,mediaSource,analyser,freqBinCount,dataArray;
                 function analyser_handler(){
-                    canvas.width=document.innerWidth;
-                    canvas.height=document.innerHeight;
+                    canvas.width=window.innerWidth;
+                    canvas.height=window.innerHeight;
                     var drawctx=canvas.getContext("2d");
                     function renderFrame(){
+                        window.requestAnimationFrame(renderFrame);
                         analyser.getByteFrequencyData(dataArray);
-                        canvas.width=document.innerWidth;
-                        canvas.height=document.innerHeight;
+                        canvas.width=window.innerWidth;
+                        canvas.height=window.innerHeight;
                         var canvasWidth=canvas.width;
                         var canvasHeight=canvas.height;
                         var barWidth=canvasWidth/freqBinCount;
@@ -58,7 +59,7 @@
                             drawctx.fillRect(barX,0,barWidth,barHeight);
                         };
                     };
-                    window.requestAnimationFrame(renderFrame);
+                    renderFrame();
                 };
                 media_icon.addEventListener("click",function(ev){
                     if (!audioctx){
