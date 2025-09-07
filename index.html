@@ -18,8 +18,8 @@
                 var theaudio=document.getElementById("playable");
                 var isPlay=false;
                 theaudio.addEventListener("timeupdate", function() {
-                    durationSlider.value = audio.currentTime;
-                    durationSlider.max = audio.duration;
+                    durationSlider.value = theaudio.currentTime;
+                    durationSlider.max = theaudio.duration;
                 });
                 durationSlider.addEventListener("change", function() {
                     audio.currentTime = durationSlider.value;
