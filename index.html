@@ -62,11 +62,15 @@
                     function renderFrame(){
                         analyser.getByteFrequencyData(dataArray);
                         var canvasWidth=canvas.width;
+                        var canvasHeight=canvas.height;
                         var freqBinCount=analyser.frequencyBinCount;
                         var barWidth=canvas.width/freqBinCount;
+                        drawctx.clearRect(0,0,canvasWidth,canvasHeight);
                         for (var i=0;i<freqBinCount;i++) {
                             var barHeight=dataArray[i]/255 * 60;
-                            
+                            var barX=barWidth*i;
+                            drawctx.fillStyle="red";
+                            drawctx.fillRect(barX,0,barWidth,barHeight);
                         };
                     };
                     window.requestAnimationFrame(renderFrame);
