@@ -49,18 +49,18 @@
                         theaudio.play();
                     };
                 });
+                var audioctx=new AudioContext();
+                var mediaSource=audioctx.createMediaElementSource(theaudio);
+                var analyser=new AnalyserNode(audioctx);
+                analyser.fftSize=128;
+                mediaSource.connect(analyser);
+                analyser.connect(audioctx.destination);
+                var freqBinCount=analyser.frequencyBinCount;
+                var dataArray=new Uint8Array(freqBinCount);
                 function analyser_handler(){
                     canvas.width=document.innerWidth;
                     canvas.height=document.innerHeight;
                     var drawctx=canvas.getContext("2d");
-                    var audioctx=new AudioContext();
-                    var mediaSource=audioctx.createMediaElementSource(theaudio);
-                    var analyser=new AnalyserNode(audioctx);
-                    analyser.fftSize=128;
-                    mediaSource.connect(analyser);
-                    analyser.connect(audioctx.destination);
-                    var freqBinCount=analyser.frequencyBinCount;
-                    var dataArray=new Uint8Array(freqBinCount);
                     function renderFrame(){
                         analyser.getByteFrequencyData(dataArray);
                         var canvasWidth=canvas.width;
