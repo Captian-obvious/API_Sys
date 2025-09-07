@@ -27,7 +27,7 @@ div.media_icon{
     width: 32px;
     background-size: cover;
     position: absolute;
-    top: calc(100% - 33px);
+    top: calc(100% - 34px);
 };
 #slider_time {
     position: absolute;
