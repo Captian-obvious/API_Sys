@@ -38,25 +38,7 @@
                     isPlay=true;
                     media_icon.className="media_icon icon_pause";
                 });
-                media_icon.addEventListener("click",function(ev){
-                    if (isPlay) {
-                        isPlay=false;
-                        media_icon.className="media_icon icon_play";
-                        theaudio.pause();
-                    }else{
-                        isPlay=true;
-                        media_icon.className="media_icon icon_pause";
-                        theaudio.play();
-                    };
-                });
-                var audioctx=new AudioContext();
-                var mediaSource=audioctx.createMediaElementSource(theaudio);
-                var analyser=new AnalyserNode(audioctx);
-                analyser.fftSize=128;
-                mediaSource.connect(analyser);
-                analyser.connect(audioctx.destination);
-                var freqBinCount=analyser.frequencyBinCount;
-                var dataArray=new Uint8Array(freqBinCount);
+                var audioctx,mediaSource,analyser,freqBinCount,dataArray;
                 function analyser_handler(){
                     canvas.width=document.innerWidth;
                     canvas.height=document.innerHeight;
@@ -76,7 +58,30 @@
                     };
                     window.requestAnimationFrame(renderFrame);
                 };
-                analyser_handler();
+                media_icon.addEventListener("click",function(ev){
+                    if (!audioctx){
+                        audioctx=new AudioContext();
+                        mediaSource=audioctx.createMediaElementSource(theaudio);
+                        analyser=new AnalyserNode(audioctx);
+                        analyser.fftSize=128;
+                        analyser.maxDecibels = -3;
+                        analyser.minDecibels = -150;
+                        mediaSource.connect(analyser);
+                        analyser.connect(audioctx.destination);
+                        freqBinCount=analyser.frequencyBinCount;
+                        dataArray=new Uint8Array(freqBinCount);
+                        analyser_handler();
+                    };
+                    if (isPlay) {
+                        isPlay=false;
+                        media_icon.className="media_icon icon_play";
+                        theaudio.pause();
+                    }else{
+                        isPlay=true;
+                        media_icon.className="media_icon icon_pause";
+                        theaudio.play();
+                    };
+                });
             });
         </script>
     </body>
