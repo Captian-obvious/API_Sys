@@ -22,7 +22,7 @@
                     durationSlider.max = theaudio.duration;
                 });
                 durationSlider.addEventListener("change", function() {
-                    audio.currentTime = durationSlider.value;
+                    theaudio.currentTime = durationSlider.value;
                 });
                 theaudio.addEventListener("pause",function(ev){
                     isPlay=false;
