@@ -1,59 +1,27 @@
 body {
     background-color: black;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
-
-#mediaPlayerControls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
-    position: relative;
+#mediaPlayerControls{
+    align-content: center;
 }
-
-.media_icon {
+h1.asset_title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+}
+div.icon_play{
+    background-image: url("images/play_icon.svg");
+}
+div.icon_play:hover{
+    background-image: url("images/play_icon_hover.svg");
+}
+div.icon_pause{
+    background-image: url("images/pause_icon.svg");
+}
+div.icon_pause:hover{
+    background-image: url("images/pause_icon_hover.svg");
+}
+div.media_icon{
     height: 32px;
     width: 32px;
     background-size: cover;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-}
-
-input.slider_time {
-    width: calc(100% - 35px);
-    margin-left: 35px;
-    position: relative;
-    z-index: 1;
-}
-
-h1.asset_title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3em;
-    text-align: center;
-    color: white;
-}
-
-div.icon_play {
-    background-image: url("images/play_icon.svg");
-}
-
-div.icon_play:hover {
-    background-image: url("images/play_icon_hover.svg");
-}
-
-div.icon_pause {
-    background-image: url("images/pause_icon.svg");
-}
-
-div.icon_pause:hover {
-    background-image: url("images/pause_icon_hover.svg");
 }
