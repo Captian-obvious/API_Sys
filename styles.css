@@ -1,6 +1,9 @@
 body {
     background-color: black;
 }
+#mediaPlayerControls{
+    align-content: center;
+}
 h1.asset_title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 10em;
