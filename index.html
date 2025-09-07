@@ -61,8 +61,8 @@
                             drawctx.fillStyle=`rgb(${barHeight + 100} 50 50)`;
                             drawctx.fillRect(barX,0,barWidth,barHeight);
                         };
+                        window.requestAnimationFrame(renderFrame);
                     };
-                    window.requestAnimationFrame(renderFrame);
                     renderFrame();
                 };
                 media_icon.addEventListener("click",function(ev){
