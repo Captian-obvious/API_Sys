@@ -31,6 +31,7 @@ div.media_icon {
     background-size: cover;
     position: absolute;
     top: calc(100% - 34px);
+    z-index: 5;
 }
 #visualizer {
     width:100%;
@@ -38,6 +39,7 @@ div.media_icon {
     top: 0px;
     position: absolute;
     background-color: black;
+    z-index:0;
 }
 #slider_time {
     position: absolute;
@@ -45,4 +47,5 @@ div.media_icon {
     height: 8px;
     left: 40px;
     top: calc(100% - 25px);
+    z-index: 5;
 }
