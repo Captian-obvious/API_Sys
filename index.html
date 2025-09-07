@@ -11,5 +11,22 @@
             <div id="icon_playpause" class="media_icon icon_play"></div>
             <input id="slider_time" type="range"/>
         </div>
+        <script>
+            window.addEventListener("load",function(ev){
+                var media_icon=document.getElementById("icon_playpause");
+                var durationSlider=document.getElementById("slider_time");
+                var theaudio=document.getElementById("playable");
+                var is_play=false;
+                media_icon.addEventListener("click",function(ev){
+                    if (isPlay) {
+                        media_icon.className="media_icon icon_play";
+                        theaudio.pause();
+                    }else{
+                        media_icon.className="media_icon icon_pause";
+                        theaudio.play();
+                    };
+                });
+            });
+        </script>
     </body>
 </html>
