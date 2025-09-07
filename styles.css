@@ -18,7 +18,7 @@ div.icon_pause{
 div.icon_pause:hover{
     background-image: url("images/pause_icon_hover.svg");
 }
-div.media_icon{
+div.media_icon {
     height: 32px;
     width: 32px;
     background-size: cover;
@@ -31,4 +31,13 @@ div.media_icon{
     height: 8px;
     left: 40px;
     top: calc(100% - 25px);
+}
+@media only screen and (max-width: 600px) {
+    #slider_time {
+        position: absolute;
+        width: calc(100% - 50px);
+        height: 8px;
+        left: 40px;
+        top: calc(100% - 25px);
+    }
 }
