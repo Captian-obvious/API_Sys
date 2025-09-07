@@ -31,6 +31,9 @@
                 durationSlider.addEventListener("change", function() {
                     theaudio.currentTime=durationSlider.value;
                 });
+                theaudio.addEventListener("ended",function(ev){
+                    durationSlider.value=durationSlider.max;
+                });
                 theaudio.addEventListener("pause",function(ev){
                     isPlay=false;
                     media_icon.className="media_icon icon_play";
