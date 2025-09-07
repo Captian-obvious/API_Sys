@@ -50,6 +50,7 @@
                 });
                 function analyser_handler(){
                     var drawctx=canvas.getContext("2d");
+                    drawctx.fillStyle="black";
                     var audioctx=new AudioContext();
                     var mediaSource=audioctx.createMediaElementSource(theaudio);
                     var analyser=new AnalyserNode(audioctx);
