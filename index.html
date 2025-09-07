@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Asset "{ASSET_NAME}"</title>
+        <title>Asset "{{ ASSET_NAME }}"</title>
         <link rel="stylesheet" href="styles.css"/>
         <link rel="icon" href="images/favicon.png"/>
     </head>
     <body>
-        <h1 class="asset_title">{ASSET_NAME_ID}</h1>
+        <h1 class="asset_title">{{ ASSET_NAME_ID }}</h1>
         <h1 class="asset_moderated_message" hidden>Asset is private, archived, or has been moderated</h1>
         <div id="mediaPlayerControls">
-            <audio id="playable" src="{CACHE_SOURCE}" hidden></audio>
+            <audio id="playable" src="{{ CACHE_SOURCE }}" hidden></audio>
             <div id="picture"></div>
             <div id="icon_playpause" class="media_icon icon_play"></div>
             <input id="slider_time" type="range" value="0"/>
