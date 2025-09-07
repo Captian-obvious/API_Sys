@@ -18,11 +18,11 @@
                 var theaudio=document.getElementById("playable");
                 var isPlay=false;
                 theaudio.addEventListener("timeupdate", function() {
-                    durationSlider.value = theaudio.currentTime;
-                    durationSlider.max = theaudio.duration;
+                    durationSlider.value=theaudio.currentTime;
+                    durationSlider.max=theaudio.duration;
                 });
                 durationSlider.addEventListener("change", function() {
-                    theaudio.currentTime = durationSlider.value;
+                    theaudio.currentTime=durationSlider.value;
                 });
                 theaudio.addEventListener("pause",function(ev){
                     isPlay=false;
