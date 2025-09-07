@@ -5,13 +5,13 @@ h1.asset_title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
     color:cadetblue;
-    z-index: 20;
+    z-index: 8;
 }
 h1.asset_moderated_message {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
     color:cadetblue;
-    z-index: 20;
+    z-index: 8;
 }
 div.icon_play{
     background-image: url("images/play_icon.svg");
