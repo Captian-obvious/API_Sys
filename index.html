@@ -22,6 +22,7 @@
                 var theaudio=document.getElementById("playable");
                 var canvas=document.getElementById("visualizer");
                 var isPlay=false;
+                theaudio.load();
                 theaudio.addEventListener("timeupdate", function() {
                     durationSlider.value=theaudio.currentTime;
                     durationSlider.max=theaudio.duration;
