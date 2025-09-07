@@ -53,7 +53,7 @@
                         var barWidth=canvasWidth/freqBinCount;
                         drawctx.clearRect(0,0,canvasWidth,canvasHeight);
                         for (var i=0;i<freqBinCount;i++) {
-                            var barHeight=dataArray[i]/255 * canvasHeight;
+                            var barHeight=dataArray[i]/255 * (.6 * canvasHeight) ;
                             var barX=barWidth*i;
                             drawctx.fillStyle=`rgb(${barHeight + 100} 50 50)`;
                             drawctx.fillRect(barX,0,barWidth,barHeight);
