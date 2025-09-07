@@ -16,12 +16,14 @@
                 var media_icon=document.getElementById("icon_playpause");
                 var durationSlider=document.getElementById("slider_time");
                 var theaudio=document.getElementById("playable");
-                var is_play=false;
+                var isPlay=false;
                 media_icon.addEventListener("click",function(ev){
                     if (isPlay) {
+                        isPlay=false;
                         media_icon.className="media_icon icon_play";
                         theaudio.pause();
                     }else{
+                        isPlay=true;
                         media_icon.className="media_icon icon_pause";
                         theaudio.play();
                     };
