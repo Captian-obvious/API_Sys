@@ -49,6 +49,8 @@
                     };
                 });
                 function analyser_handler(){
+                    canvas.width=document.innerWidth;
+                    canvas.height=document.innerHeight;
                     var drawctx=canvas.getContext("2d");
                     drawctx.fillStyle="black";
                     var audioctx=new AudioContext();
