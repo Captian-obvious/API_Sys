@@ -35,6 +35,14 @@ div.media_icon {
     top: calc(100% - 34px);
     z-index: 5;
 }
+div.picture {
+    height: 128px;
+    width: 128px;
+    background-size: cover;
+    position: absolute;
+    top: calc(100% - 164px);
+    z-index: 5;
+}
 #visualizer {
     width:100%;
     height:100%;
