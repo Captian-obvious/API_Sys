@@ -25,7 +25,7 @@
                 var canvas=document.getElementById("visualizer");
                 var isPlay=false;
                 theaudio.load();
-                image.style.backgroundImage="url(https://www.roblox.com/asset-thumbnail/image?assetId={{ ASSET_ID }}&width=420&height=420&format=png)";
+                image.style.backgroundImage="url('{{ CACHE_IMAGE }}'')";
                 theaudio.addEventListener("timeupdate", function() {
                     durationSlider.value=theaudio.currentTime;
                     durationSlider.max=theaudio.duration;
