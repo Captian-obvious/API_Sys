@@ -41,7 +41,7 @@ div.picture {
     background-size: cover;
     position: absolute;
     top: calc(100% - 164px);
-    z-index: 5;
+    z-index: 6;
 }
 #visualizer {
     width:100%;
