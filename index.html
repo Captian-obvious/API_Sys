@@ -18,12 +18,14 @@
         </div>
         <script id="mediaPlayerHandler">
             window.addEventListener("load",function(ev){
+                var image=document.getElementById("picture");
                 var media_icon=document.getElementById("icon_playpause");
                 var durationSlider=document.getElementById("slider_time");
                 var theaudio=document.getElementById("playable");
                 var canvas=document.getElementById("visualizer");
                 var isPlay=false;
                 theaudio.load();
+                image.style.backgroundImage="url(https://www.roblox.com/asset-thumbnail/image?assetId={{ ASSET_ID }}&width=420&height=420&format=png)";
                 theaudio.addEventListener("timeupdate", function() {
                     durationSlider.value=theaudio.currentTime;
                     durationSlider.max=theaudio.duration;
