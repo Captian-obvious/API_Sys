@@ -25,7 +25,7 @@
                 var canvas=document.getElementById("visualizer");
                 var isPlay=false;
                 theaudio.load();
-                image.style.backgroundImage="url('{{ CACHE_IMAGE }}'')";
+                image.style.backgroundImage="url('{{ THUMBNAIL_URL }}'')";
                 theaudio.addEventListener("timeupdate", function() {
                     durationSlider.value=theaudio.currentTime;
                     durationSlider.max=theaudio.duration;
