@@ -59,7 +59,7 @@
                             var barHeight=dataArray[i]/255 * (.6 * canvasHeight) ;
                             var barX=barWidth*i;
                             drawctx.fillStyle=`rgb(${barHeight + 100} 50 50)`;
-                            drawctx.fillRect(barX,0,barWidth-1,barHeight);
+                            drawctx.fillRect(barX,0,barWidth-2,barHeight);
                         };
                         window.requestAnimationFrame(renderFrame);
                     };
@@ -70,7 +70,7 @@
                         audioctx=new AudioContext();
                         mediaSource=audioctx.createMediaElementSource(theaudio);
                         analyser=new AnalyserNode(audioctx);
-                        analyser.fftSize=128;
+                        analyser.fftSize=256;
                         analyser.maxDecibels = -4;
                         mediaSource.connect(analyser);
                         analyser.connect(audioctx.destination);
