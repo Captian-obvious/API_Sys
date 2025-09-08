@@ -35,7 +35,7 @@ div.media_icon {
     top: calc(100% - 34px);
     z-index: 5;
 }
-div.picture {
+#picture {
     height: 128px;
     width: 128px;
     background-size: cover;
