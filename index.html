@@ -53,7 +53,7 @@
                         canvas.height=window.innerHeight;
                         var canvasWidth=canvas.width;
                         var canvasHeight=canvas.height;
-                        var barWidth=canvasWidth/freqBinCount;
+                        var barWidth=(canvasWidth/freqBinCount) - 1;
                         drawctx.clearRect(0,0,canvasWidth,canvasHeight);
                         for (var i=0;i<freqBinCount;i++) {
                             var barHeight=dataArray[i]/255 * (.6 * canvasHeight) ;
