@@ -53,13 +53,13 @@
                         canvas.height=window.innerHeight;
                         var canvasWidth=canvas.width;
                         var canvasHeight=canvas.height;
-                        var barWidth=(canvasWidth/freqBinCount) - 1;
+                        var barWidth=(canvasWidth/freqBinCount);
                         drawctx.clearRect(0,0,canvasWidth,canvasHeight);
                         for (var i=0;i<freqBinCount;i++) {
                             var barHeight=dataArray[i]/255 * (.6 * canvasHeight) ;
                             var barX=barWidth*i;
                             drawctx.fillStyle=`rgb(${barHeight + 100} 50 50)`;
-                            drawctx.fillRect(barX,0,barWidth,barHeight);
+                            drawctx.fillRect(barX,0,barWidth-1,barHeight);
                         };
                         window.requestAnimationFrame(renderFrame);
                     };
