@@ -61,7 +61,9 @@
                             var barHeight=dataArray[i]/255 * (.6 * canvasHeight) ;
                             var barX=barWidth*i;
                             drawctx.fillStyle=`rgb(${barHeight + 100} 50 50)`;
-                            drawctx.fillRect(barX,0,barWidth-2,barHeight);
+                            renderWidth=barWidth-2;
+                            if (renderWidth<1) renderWidth=1;
+                            drawctx.fillRect(barX,0,renderWidth,barHeight);
                         };
                         window.requestAnimationFrame(renderFrame);
                     };
